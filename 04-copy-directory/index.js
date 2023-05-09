@@ -36,12 +36,12 @@ function copyDir(oldFilePath, newFilePath) {
         if (err) throw err;
       });
     } 
-    // else {
-    //   fs.promises.rm(path.join(newFilePath), { recursive: true }, () => {
-    //     }).then(fs.mkdir(newFilePath, {recursive: true}, (err) => {
-    //       if (err) throw err;
-    //     }));
-    //     }
+    else {
+      fs.promises.rm(path.join(newFilePath), { recursive: true }, () => {
+      }).then(fs.mkdir(newFilePath, {recursive: true}, (err) => {
+        if (err) throw err;
+      }));
+    }
       
     
     copyFiles (oldFilePath, newFilePath);
